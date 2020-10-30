@@ -9,10 +9,9 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import { login_graphql } from "../actions";
-import { ToastContainer, toast } from 'react-toastify';  
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import history from "../apis/History";
-
 
 class Login extends Component {
   state = {
@@ -21,29 +20,26 @@ class Login extends Component {
   };
   componentDidMount() {}
   onSubmit_login = async (field) => {
-    try{
-    const {username,password } = this.state;
-    const result = await this.props.login_graphql(username,password);
-    // console.log(result.data.data.loginUser.token);
-    if (result.data.data.loginUser!==null && result.data.data.loginUser.token!==null){
-    localStorage.setItem('token',result.data.data.loginUser.token);
-    history.push("/createdata");
-  }
-    else{
-      toast.error("Wrong Password !");
-      localStorage.removeItem("token")
+    try {
+      const { username, password } = this.state;
+      const result = await this.props.login_graphql(username, password);
+      // console.log(result.data.data.loginUser.token);
+      if (
+        result.data.data.loginUser !== null &&
+        result.data.data.loginUser.token !== null
+      ) {
+        localStorage.setItem("token", result.data.data.loginUser.token);
+        history.push("/createdata");
+      } else {
+        toast.error("Wrong Password !");
+        localStorage.removeItem("token");
+      }
+      console.log(result);
+    } catch {
+      toast.error("ERROR");
     }
-    console.log(result);
-    
-
-  }
-  catch{
-    toast.error("ERROR");
-
-  }
-   
   };
-  render() { 
+  render() {
     return (
       <div>
         <Card>
@@ -80,7 +76,7 @@ class Login extends Component {
             {/* </Typography> */}
           </CardContent>
           <CardActions></CardActions>
-        </Card>  
+        </Card>
         <ToastContainer />
       </div>
     );
@@ -88,10 +84,10 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-//   if(state.my_all_data.data && state.my_all_data.data.loginUser){
-//     console.log(state.my_all_data.data.loginUser.token);
-//   localStorage.setItem('token',state.my_all_data.loginUser)
-// }
+  //   if(state.my_all_data.data && state.my_all_data.data.loginUser){
+  //     console.log(state.my_all_data.data.loginUser.token);
+  //   localStorage.setItem('token',state.my_all_data.loginUser)
+  // }
   return {
     myitems: Object.values(state),
   };

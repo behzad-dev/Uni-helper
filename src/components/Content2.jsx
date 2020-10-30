@@ -11,7 +11,6 @@ import Paper from "@material-ui/core/Paper";
 import history from "../apis/History";
 import { withRouter } from "react-router-dom";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
 
 import { retrieve_graphql } from "../actions";
 import { Container } from "@material-ui/core";
@@ -139,20 +138,19 @@ class Content extends Component {
                     Major
                   </StyledTableCell>
                   <StyledTableCell
-                    onClick={() => this.mysort("LanguageScore")}
+                    onClick={() => this.mysort("Admission")}
                     align="center"
                   >
                     Language
                   </StyledTableCell>
                   <StyledTableCell
-                    // onClick={() => this.mysort("LanguageScore")}
+                    onClick={() => this.mysort("LanguageScore")}
                     align="center"
                   >
                     Final score
                   </StyledTableCell>
-                  <StyledTableCell align="center">Tuition Fees</StyledTableCell>
                   <StyledTableCell
-                    // onClick={() => this.mysort("Overall_score")}
+                    onClick={() => this.mysort("Overall_score")}
                     align="center"
                   >
                     Admission
@@ -167,26 +165,29 @@ class Content extends Component {
                   sorted.map((row) => (
                     <TableRow key={row._id}>
                       <TableCell component="th" scope="row">
-                        <Link target="_blank" href={row.LinkDaad}>
-                          {row.Uni_name}
-                        </Link>
+                        {row.Uni_name}
                       </TableCell>
-                      <TableCell align="center">{row.Field_name}</TableCell>
+
+                      <TableCell
+                        onClick={() =>
+                          window.open("http://google.com", "_blank")
+                        }
+                        align="center"
+                      >
+                        {row.Field_name}
+                      </TableCell>
+
                       <StyledTableCellBody align="center">
-                        {row.LanguageIELTS}
+                        {row.LanguageScore}
                       </StyledTableCellBody>
                       <StyledTableCellBody align="center">
-                        {row.OverallScore}
+                        {row.Overall_score}
                       </StyledTableCellBody>
-                      <StyledTableCellBody align="center">
-                        {row.TuitionFees}
-                      </StyledTableCellBody>
+
                       <StyledTableCellBody2 align="right">
                         <Accordion>
                           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Link target="_blank" href={row.LinkUni}>
-                              {row.Admission}{" "}
-                            </Link>
+                            {row.Admission}{" "}
                           </AccordionSummary>
                           <AccordionDetails>
                             a very good uni,,,oh its a very good uni,,,oh its a
@@ -209,9 +210,9 @@ class Content extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log("state");
+  // console.log("state");
 
-  console.log(state);
+  // console.log(state);
 
   return {
     myitems: _.compact(Object.values(state.my_all_data)),

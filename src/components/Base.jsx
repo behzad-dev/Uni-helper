@@ -26,10 +26,10 @@ import AboutUs from "./AboutUs";
 import Login from "./Login";
 import Createdata from "./Createdata";
 import ScoreCalculator from "./ScoreCalculator";
-import Filter1Icon from '@material-ui/icons/Filter1';
-import Popover from '@material-ui/core/Popover';
-import AlarmIcon from '@material-ui/icons/Alarm';
-import SchoolIcon from '@material-ui/icons/School';
+import Filter1Icon from "@material-ui/icons/Filter1";
+import Popover from "@material-ui/core/Popover";
+import AlarmIcon from "@material-ui/icons/Alarm";
+import SchoolIcon from "@material-ui/icons/School";
 const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   popover: {
-    pointerEvents: 'none',
+    pointerEvents: "none",
   },
   paper: {
     padding: theme.spacing(1),
@@ -115,7 +115,10 @@ function Base(props) {
         className={classes.appBarDrawer}
         // className={classes.appBarDrawer}
       >
-        <Toolbar><SchoolIcon />Uni-Helper</Toolbar>
+        <Toolbar>
+          <SchoolIcon />
+          Uni-Helper
+        </Toolbar>
       </AppBar>
       {/* <main className={classes.content}> */}
       <main>
@@ -134,23 +137,24 @@ function Base(props) {
             </ListItemIcon>
             <ListItemText primary={"ScoreCalculator"} />
           </ListItem>
-          <ListItem button       onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose} >
-            <ListItemIcon >
+          <ListItem
+            button
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          >
+            <ListItemIcon>
               <AlarmIcon />
             </ListItemIcon>
-            <ListItemText  primary={"Documents Confirmations"} />
-    
+            <ListItemText primary={"Documents Confirmations"} />
           </ListItem>
-          
-       
+
           <ListItem button component={Link} to="/About-us">
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
             <ListItemText primary={"About us"} />
           </ListItem>
-        
+
           <ListItem button component={Link} to="/Login">
             <ListItemIcon>
               <AccountCircleIcon />
@@ -246,7 +250,9 @@ function Base(props) {
         {props.myPage === "AboutUs" && <AboutUs></AboutUs>}
         {props.myPage === "Login" && <Login></Login>}
         {props.myPage === "Createdata" && <Createdata></Createdata>}
-        {props.myPage === "ScoreCalculator" && <ScoreCalculator></ScoreCalculator>}
+        {props.myPage === "ScoreCalculator" && (
+          <ScoreCalculator></ScoreCalculator>
+        )}
 
         {/* <Content></Content> */}
       </main>
@@ -259,19 +265,25 @@ function Base(props) {
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
+          vertical: "bottom",
+          horizontal: "right",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-                <Typography>Notify You When Document Confirmation is available so you can reserve appointment ( This feature will be added if there be a demand ) </Typography>
+        <Typography>
+          Notify You When Document Confirmation is available so you can reserve
+          appointment ( This feature will be added if there be a demand ){" "}
+        </Typography>
 
-        <Typography>در صورتی که وقت تایید مدارک باز شود به شما اطلاع میدهد (این قابلیت در صورت درخواست عمومی به سایت اضافه خواهد شد) </Typography>
+        <Typography>
+          در صورتی که وقت تایید مدارک باز شود به شما اطلاع میدهد (این قابلیت در
+          صورت درخواست عمومی به سایت اضافه خواهد شد){" "}
+        </Typography>
       </Popover>
     </div>
   );
