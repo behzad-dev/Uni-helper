@@ -22,6 +22,8 @@ import { Link } from "react-router-dom";
 import history from "../apis/History";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Content from "./Content";
+import Content2 from "./Content2";
+
 import AboutUs from "./AboutUs";
 import Login from "./Login";
 import Createdata from "./Createdata";
@@ -227,6 +229,8 @@ function Base(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.myPage === "Content" && <Content></Content>}
+        {props.myPage === "Content" && <Content2></Content2>}
+
         {props.myPage === "AboutUs" && <AboutUs></AboutUs>}
         {props.myPage === "Login" && <Login></Login>}
         {props.myPage === "Createdata" && <Createdata></Createdata>}

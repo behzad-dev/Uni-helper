@@ -20,6 +20,9 @@ function App() {
         <Route path="/Content" exact>
           <Base myPage={"Content"} />
         </Route>
+        <Route path="/Content2" exact>
+          <Base myPage={"Content2"} />
+        </Route>
         <Route path="/Login" exact>
           <Base myPage={"Login"} />
         </Route>

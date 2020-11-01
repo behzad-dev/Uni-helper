@@ -20,7 +20,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-class Content extends Component {
+class Content2 extends Component {
   state = {
     sortColumn: { path: "Uni_name", order: "asc" },
   };
@@ -221,4 +221,4 @@ const mapStateToProps = (state) => {
 };
 export default connect(mapStateToProps, {
   retrieve_graphql,
-})(Content);
+})(Content2);
