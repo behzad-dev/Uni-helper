@@ -1,9 +1,5 @@
 import React from "react";
 import "./App.css";
-import Base from "./Base";
-import Content from "./Content";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import history from "../apis/History";
 
 function AboutUs() {
   return (
