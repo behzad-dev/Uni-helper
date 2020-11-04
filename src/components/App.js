@@ -6,7 +6,8 @@ import ScoreCalculator from "./ScoreCalculator";
 import Content from "./Content";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import history from "../apis/History";
-
+//Here we define Routes
+//Later, in app we can move to defined routes
 function App() {
   return (
     <div>
