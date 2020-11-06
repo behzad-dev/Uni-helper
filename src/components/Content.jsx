@@ -188,14 +188,7 @@ class Content extends Component {
                               {row.Admission}{" "}
                             </Link>
                           </AccordionSummary>
-                          <AccordionDetails>
-                            a very good uni,,,oh its a very good uni,,,oh its a
-                            very good u a very good uni,,,oh its a very good
-                            uni,,,oh its a very good u oh its a very good
-                            uni,,,oh its a very good uni,,,oh its a very good
-                            uni,,,oh its a very good uni,,,oh its a very good
-                            uni,,,
-                          </AccordionDetails>
+                          <AccordionDetails>These are details</AccordionDetails>
                         </Accordion>
                       </StyledTableCellBody2>
                     </TableRow>
