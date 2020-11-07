@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { createpost_graphql } from "../actions";
 import { connect } from "react-redux";
 import TextField from "@material-ui/core/TextField";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -47,8 +45,6 @@ class Createdata extends Component {
       );
 
       if (result.data.data.sendnewpost.Field_name) {
-        // console.log(result.data.data.sendnewpost.Field_name);
-
         toast.success(result.data.data.sendnewpost.Field_name + " is Saved!");
       }
     } else {
