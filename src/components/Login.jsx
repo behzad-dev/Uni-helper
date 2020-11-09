@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import { login_graphql } from "../actions";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,7 +20,6 @@ class Login extends Component {
     try {
       const { username, password } = this.state;
       const result = await this.props.login_graphql(username, password);
-      // console.log(result.data.data.loginUser.token);
       if (
         result.data.data.loginUser !== null &&
         result.data.data.loginUser.token !== null
@@ -44,7 +40,6 @@ class Login extends Component {
       <div>
         <Card>
           <CardContent>
-            {/* <Typography color="textSecondary" gutterBottom> */}
             <form noValidate autoComplete="off">
               <div>
                 {" "}
@@ -73,7 +68,6 @@ class Login extends Component {
                 </Button>
               </div>
             </form>
-            {/* </Typography> */}
           </CardContent>
           <CardActions></CardActions>
         </Card>
