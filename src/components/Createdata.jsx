@@ -58,7 +58,6 @@ class Createdata extends Component {
         {" "}
         <Card>
           <CardContent>
-            {/* <Typography color="textSecondary" gutterBottom> */}
             {(token && (
               <form noValidate autoComplete="off">
                 <div>
