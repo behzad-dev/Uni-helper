@@ -15,11 +15,9 @@ export const retrieve_graphql = () => async (dispatch) => {
   };
   try {
     const response = await myApi.post("", graph, { headers: headersx });
-    // console.log(response);
     if (!response) {
       console.log("ERROR");
     }
-    // console.log(response);
     dispatch({ type: RETRIEVE_GRAPHQL, payload: response.data });
     return response;
   } catch {
@@ -30,7 +28,6 @@ export const retrieve_graphql = () => async (dispatch) => {
 
 export const login_graphql = (Username, Password) => async (dispatch) => {
   const user = Username;
-  // console.log("Into LOGIN");
   const graph = {
     query: `mutation {loginUser(userInput:{username:"${Username}" password:"${Password}"}){
       username 
@@ -69,7 +66,6 @@ export const createpost_graphql = (
     test: "mybeh",
   };
   const response = await myApi.post("", graph, { headers: headersx });
-  // console.log(response);
   dispatch({ type: CREATEPOST_GRAPHQL, payload: response.data });
   return response;
 };
