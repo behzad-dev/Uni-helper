@@ -1,3 +1,5 @@
+//In action you call your API and send it to your reducer
+
 // import _ from "lodash";
 import { myApi } from "../apis/myApi";
 import { RETRIEVE_GRAPHQL, LOGIN_GRAPHQL, CREATEPOST_GRAPHQL } from "./types";
