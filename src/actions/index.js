@@ -6,7 +6,6 @@ import { RETRIEVE_GRAPHQL, LOGIN_GRAPHQL, CREATEPOST_GRAPHQL } from "./types";
 // import history from "../apis/history";
 
 export const retrieve_graphql = () => async (dispatch) => {
-  // console.log("Into retrieve_graphql");
   const graph = {
     query: `{getall{ _id  Uni_name Field_name LanguageIELTS LanguageTOFEL City OverallScore Admission AdmissionSemster LinkDaad LinkUni AdmissionMode TuitionFees}}`,
   };
