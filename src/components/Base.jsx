@@ -226,6 +226,7 @@ function Base(props) {
           </Drawer>
         </Hidden>
       </nav>
+      {/* here Shows Content Based on what it gets as props from App.js */}
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.myPage === "Content" && <Content></Content>}
