@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-
+//simple pages should be function , not class. with a simple function you can return a simple text without extra
 function AboutUs() {
   return (
     <div>
