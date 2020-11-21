@@ -208,7 +208,6 @@ const mapStateToProps = (state) => {
 
   return {
     myitems: _.compact(Object.values(state.my_all_data)),
-    // myboughtbeh: _.compact(Object.values(state.my_all_data2))
   };
 };
 export default connect(mapStateToProps, {
