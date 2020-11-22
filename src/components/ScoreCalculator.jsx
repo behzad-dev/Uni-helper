@@ -1,5 +1,6 @@
 import { Divider, TextField } from "@material-ui/core";
 import React, { Component } from "react";
+// This is simple calculator  page
 class ScoreCalculator extends Component {
   state = { Score: 20 };
   render() {
