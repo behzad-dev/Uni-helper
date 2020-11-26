@@ -1,9 +1,6 @@
 import React from "react";
 import "./App.css";
 import Base from "./Base";
-import Createdata from "./Createdata";
-import ScoreCalculator from "./ScoreCalculator";
-import Content from "./Content";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import history from "../apis/History";
 //Here we define Routes
