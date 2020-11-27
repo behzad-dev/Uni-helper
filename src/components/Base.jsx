@@ -238,8 +238,6 @@ function Base(props) {
         {props.myPage === "ScoreCalculator" && (
           <ScoreCalculator></ScoreCalculator>
         )}
-
-        {/* <Content></Content> */}
       </main>
       <Popover
         id="mouse-over-popover"
